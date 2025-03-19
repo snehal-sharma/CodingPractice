@@ -11,26 +11,23 @@ Explanation: -12 and -18 are both similarly close to -15 and divisible by 6. but
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
-	n := 15
+	n := -14
 	m := 6
 	result := 0
-	if n < 0 {
-		n = n - m
-		for i := n; i < 0; i++ {
-			if i%m == 0 {
-				result = i
-				break
-			}
-		}
-	} else {
-		for i := n; i > 0; i-- {
-			if i%m == 0 {
-				result = i
-				break
-			}
+	upperLimit := int(math.Abs(float64(n)) + math.Abs(float64(m)))
+	lowerLimit := int(math.Abs(float64(n)) - math.Abs(float64(m)))
+	difference := upperLimit - lowerLimit
+	for i := lowerLimit; i < upperLimit; i++ {
+		currentDifference := int(math.Abs((math.Abs(float64(n)) - math.Abs(float64(i)))))
+		if i%m == 0 && currentDifference <= difference {
+			result = i
+			difference = int(math.Abs((math.Abs(float64(n)) - math.Abs(float64(i)))))
 		}
 	}
 	fmt.Println(result)
