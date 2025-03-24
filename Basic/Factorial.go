@@ -1,4 +1,12 @@
+/*
+The factorial of a number is the product of all positive integers less than or equal to that number.
+For example, 7! means 1 × 2 × 3 × 4 × 5 × 6 × 7. 
 
+nPr  represents n permutation r and value of nPr  is (n!) / (n-r)!.
+
+The binomial coefficient nCr is calculated as : C(n,r) = n! / r! * (n-r)!.
+
+*/
 package main
 
 import "fmt"
