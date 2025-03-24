@@ -15,11 +15,17 @@ func main() {
 	n := 5
 	r := 2
 	factorial := fact(5)
-	nPrVal := ComputeNPR(n, r)
-	nCrVal := ComputeNCR(n, r)
-	fmt.Printf("\nFactorial of n=%v is %v", n, factorial)
-	fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, nPrVal)
-	fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, nCrVal)
+	if n >= r {
+		nPrVal := ComputeNPR(n, r)
+		nCrVal := ComputeNCR(n, r)
+		fmt.Printf("\nFactorial of n=%v is %v", n, factorial)
+		fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, nPrVal)
+		fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, nCrVal)
+	} else {
+		fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, 0)
+		fmt.Printf("\nCompute nPr of n=%v and r=%v is %v", n, r, 0)
+
+	}
 }
 
 func fact(n int) int {
