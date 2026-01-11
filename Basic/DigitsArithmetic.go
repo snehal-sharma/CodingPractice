@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	n := 153
+	n := 9474
 	a := 3
 	b := 3
 	k := 1
@@ -17,17 +17,24 @@ func main() {
 }
 
 /*
-An Armstrong number of three digits is a number such that the sum of the cubes of its digits is equal to the number itself. 371 is an Armstrong number since 33 + 73 + 13 = 371.
+An Armstrong number (or narcissistic number) is a number that equals the sum of its own digits, each raised to the power of the total number of digits in the number. 
+9474 is an armstrong number since 9*9*9*9 + 4*4*4*4 + 7*7*7*7 + 4*4*4*4 = 9474
 */
 
 func ArmstrongNumber(n int) {
+	var numArr []int
+	original := num
 	sum := 0
-	original := n
-	for n != 0 {
-		m := n % 10
-		n = n / 10
-		sum += m * m * m
+	for num != 0 {
+		value := num % 10
+		numArr = append(numArr, value)
+		num = num / 10
 	}
+
+	for _, numVal := range numArr {
+		sum += int(math.Pow(float64(numVal), float64(len(numArr))))
+	}
+
 	if original == sum {
 		fmt.Printf("\n%v is an Armstrong Number", original)
 	} else {
