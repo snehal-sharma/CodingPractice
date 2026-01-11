@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func main() {
@@ -17,18 +18,18 @@ func main() {
 }
 
 /*
-An Armstrong number (or narcissistic number) is a number that equals the sum of its own digits, each raised to the power of the total number of digits in the number. 
+An Armstrong number (or narcissistic number) is a number that equals the sum of its own digits, each raised to the power of the total number of digits in the number.
 9474 is an armstrong number since 9*9*9*9 + 4*4*4*4 + 7*7*7*7 + 4*4*4*4 = 9474
 */
 
 func ArmstrongNumber(n int) {
 	var numArr []int
-	original := num
+	original := n
 	sum := 0
-	for num != 0 {
-		value := num % 10
+	for n != 0 {
+		value := n % 10
 		numArr = append(numArr, value)
-		num = num / 10
+		n = n / 10
 	}
 
 	for _, numVal := range numArr {
