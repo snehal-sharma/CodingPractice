@@ -72,7 +72,7 @@ func ReverseDigits(n int) {
 /*
 Input: a = 3, b = 3, k = 1
 Output: 7
-Explanation: 33 = 27 and 1st digit from right is 7
+Explanation: math.Pow(3,3) = 27 and 1st digit from right is 7
 */
 func KthDigit(a, b, k int) {
 	power := 1
